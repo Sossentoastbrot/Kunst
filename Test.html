@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunst: Selbstporträt</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: serif;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #panel {
+            background-color: #ffffff;
+            width: 600px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="panel">
+        Mein Selbstporträt, aber anders
+    </div>
+
+    <script>
+        let texts = [
+            "Mein Selbstporträt, aber anders",
+            "Neuer Text",
+            "Noch ein Text",
+            "Ein weiterer Text"
+        ];
+        let currentIndex = 0;
+        let panel = document.getElementById('panel');
+
+        // Funktion zum Wechseln des Textes
+        function switchText() {
+            currentIndex = (currentIndex + 1) % texts.length;
+            panel.textContent = texts[currentIndex];
+        }
+
+        // Event Listener für Tastendruck
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                window.close(); // Schließt das Fenster, wenn Escape gedrückt wird
+            } else {
+                switchText(); // Wechselt den Text bei jedem anderen Tastendruck
+            }
+        });
+    </script>
+</body>
+</html>
